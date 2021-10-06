@@ -4,3 +4,5 @@
 [user]
 	name = Foxocube
 	email = me@foxocube.xyz
+[pull]
+	rebase = false

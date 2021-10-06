@@ -120,4 +120,4 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-neofetch
+neofetch --config .neofetch.conf

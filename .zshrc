@@ -55,4 +55,4 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-neofetch --config .neofetch.conf
+neofetch --config ~/.neofetch.conf

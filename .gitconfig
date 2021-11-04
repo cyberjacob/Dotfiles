@@ -6,3 +6,5 @@
 	email = me@foxocube.xyz
 [pull]
 	rebase = false
+[core]
+	editor = codium

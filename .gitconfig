@@ -7,4 +7,4 @@
 [pull]
 	rebase = false
 [core]
-	editor = codium
+	editor = codium --wait

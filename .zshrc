@@ -11,7 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=$HOME/.starship:$PATH
+#export PATH=$HOME/.starship:$PATH
 
 alias pacman=paru
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -26,6 +26,8 @@ fi
 if (( $+commands[kubectl] )); then
     source <(kubectl completion zsh)
 fi
+
+eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -53,6 +55,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 neofetch --config ~/.neofetch.conf

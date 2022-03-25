@@ -7,4 +7,9 @@
 [pull]
 	rebase = false
 [core]
-	editor = codium --wait
+	editor = ~/.config/git-editor
+	autocrlf = true
+[pager]
+	branch = false
+[include]
+    path = ~/.gitconfig.local

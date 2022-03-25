@@ -9,11 +9,20 @@
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b6",
           "properties": {
-            "template": " {{ .UserName }} "
+            "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ if .Root }}{{else}}{{ .UserName }}@{{ end }}{{ .HostName }} "
           },
           "style": "diamond",
-          "trailing_diamond": "\ue0b0",
           "type": "session"
+        },
+        {
+          "background": "#ffff66",
+          "foreground": "#111111",
+          "trailing_diamond": "\ue0b0",
+          "properties": {
+            "template": "<parentBackground>\ue0b0</> \uf0ad "
+          },
+          "style": "diamond",
+          "type": "root"
         },
         {
           "background": "#ff479c",
@@ -21,12 +30,27 @@
           "powerline_symbol": "\ue0b0",
           "properties": {
             "folder_separator_icon": " \ue0b1 ",
-            "home_icon": "~",
-            "style": "folder",
-            "template": " \uf74a  {{ .Path }} "
+            "home_icon": "\ufd24",
+            "style": "mixed",
+            "template": " \uf74a {{ .Path }} ",
+            "mapped_locations": {
+              "/mnt/c/Users/SamMansfield": "\uf17a\ufd24",
+              "/mnt/c/Users/SamMansfield/RiderProjects": "\ue601"
+            }
           },
           "style": "powerline",
           "type": "path"
+        },
+        {
+          "type": "dotnet",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#00ffff",
+          "properties": {
+            "display_mode": "files",
+            "template": " {{ if .Unsupported }}\ue77f \uf071 {{ .Full }}{{ end }}"
+          }
         },
         {
           "background": "#fffb38",
@@ -44,7 +68,7 @@
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
           },
           "style": "powerline",
           "trailing_diamond": "\ue0b4",
@@ -114,6 +138,18 @@
           "properties": {
             "display_mode": "files",
             "fetch_version": false,
+            "template": "{{ if not .IsDefault }} \ufd03 {{.Name}} {{ end }}"
+          },
+          "style": "powerline",
+          "type": "az"
+        },
+        {
+          "background": "#FEAC19",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": false,
             "template": " \uf0e7{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
           },
           "style": "powerline",
@@ -133,20 +169,12 @@
           "style": "powerline",
           "type": "aws"
         },
-        {
-          "background": "#ffff66",
-          "foreground": "#111111",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "template": " \uf0ad "
-          },
-          "style": "powerline",
-          "type": "root"
-        },
+        
         {
           "background": "#83769c",
           "foreground": "#ffffff",
           "properties": {
+            "style": "round",
             "always_enabled": true,
             "template": "<transparent>\ue0b0</> \ufbab{{ .FormattedMs }}\u2800"
           },
@@ -156,12 +184,12 @@
         {
           "background": "#00897b",
           "background_templates": [
-            "{{ if gt .Code 0 }}#e91e63{{ end }}"
+            "{{ if ne .Code 0 }}#e91e63{{ end }}"
           ],
           "foreground": "#ffffff",
           "properties": {
             "always_enabled": true,
-            "template": "<parentBackground>\ue0b0</> \ue23a "
+            "template": "<parentBackground>\ue0b0</> {{ if gt .Code 0 }}\uf00d{{ else }}\uf42e{{ end }} "
           },
           "style": "diamond",
           "trailing_diamond": "\ue0b4",
@@ -173,13 +201,13 @@
     {
       "segments": [
         {
-          "background": "#0077c2",
-          "foreground": "#ffffff",
-          "properties": {
-            "template": "<#0077c2,transparent>\ue0b6</> \uf489 {{ .Name }} <transparent,#0077c2>\ue0b2</>"
-          },
+          "type": "os",
           "style": "plain",
-          "type": "shell"
+          "foreground": "#26C6DA",
+          "background": "#546E7A",
+          "properties": {
+            "template": "<#546E7A,transparent>\ue0b6</> {{.Icon}}{{ if .WSL }} on \uE62A{{ end }} <transparent,#546E7A>\ue0b2</>"
+          }
         },
         {
           "background": "#1BD760",
@@ -208,10 +236,24 @@
             "charged_icon": "\ue22f ",
             "charging_icon": "\ue234 ",
             "discharging_icon": "\ue231 ",
+            "display_error": true,
             "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 "
           },
           "style": "powerline",
           "type": "battery"
+        },
+        {
+          "type": "wifi",
+          "style": "powerline",
+          "background": "#8822ee",
+          "foreground": "#222222",
+          "background_templates": [
+            "{{ if (lt .Signal 60) }}#DDDD11{{ else if (lt .Signal 90) }}#DD6611{{ else }}#11CC11{{ end }}"
+          ],
+          "powerline_symbol": "\uE0B2",
+          "properties": {
+            "template": "{{ if .Error }}{{ .Error }}{{ else }}\uFAA8 {{ .SSID }} {{ .Signal }}% {{ .ReceiveRate }}Mbps{{ end }}"
+          }
         },
         {
           "background": "#2e9599",
@@ -231,7 +273,8 @@
   ],
   "console_title": true,
   "console_title_style": "template",
-  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "console_title_template": "{{ if .SSHSession }}\uf817 {{ .UserName }}@{{ .HostName }}: {{ .Folder }}{{ elseif .Root }}{{ .Folder }}{{ else }}{{ .UserName }}: {{ .Folder }}{{ end }}",
   "final_space": true,
-  "version": 1
+  "version": 1,
+  "osc99": true
 }

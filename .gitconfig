@@ -8,7 +8,7 @@
 	rebase = false
 [core]
 	editor = ~/.config/git-editor
-	autocrlf = true
+	autocrlf = false
 [pager]
 	branch = false
 [include]

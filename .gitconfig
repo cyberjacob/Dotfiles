@@ -13,3 +13,6 @@
 	branch = false
 [include]
     path = ~/.gitconfig.local
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

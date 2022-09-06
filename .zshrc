@@ -25,6 +25,7 @@ fi
 
 if (( $+commands[kubectl] )); then
     source <(kubectl completion zsh)
+    export PATH="${PATH}:${HOME}/.krew/bin"
 fi
 
 eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"

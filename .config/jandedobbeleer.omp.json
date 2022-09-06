@@ -35,7 +35,9 @@
             "template": " \uf74a {{ .Path }} ",
             "mapped_locations": {
               "/mnt/c/Users/SamMansfield": "\uf17a\ufd24",
-              "/mnt/c/Users/SamMansfield/RiderProjects": "\ue601"
+              "/mnt/c/Users/SamMansfield/RiderProjects": "\ue601",
+              "/mnt/c/Users/Jacob": "\uf17a\ufd24",
+              "/mnt/c/Users/Jacob/Programs": "\ue601"
             }
           },
           "style": "powerline",

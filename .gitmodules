@@ -1,3 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/girlpunk/ohmyzsh.git
+[submodule ".krew/index/default"]
+	path = .krew/index/default
+	url = https://github.com/kubernetes-sigs/krew-index.git

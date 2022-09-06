@@ -25,6 +25,7 @@ fi
 
 if [[ $+commands[kubectl] ]]; then
     source <(kubectl completion zsh)
+    export PATH="${PATH}:${HOME}/.krew/bin"
 fi
 
 if [[ $+commands[terraform] ]]; then

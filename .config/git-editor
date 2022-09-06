@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+if type "codium" > /dev/null; then
+  codium --wait $1
+elif type "code" > /dev/null; then
+  code --wait $1
+else
+  nano $1
+fi
+

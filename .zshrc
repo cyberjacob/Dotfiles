@@ -23,8 +23,13 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
-if (( $+commands[kubectl] )); then
+if [[ $+commands[kubectl] ]]; then
     source <(kubectl completion zsh)
+fi
+
+if [[ $+commands[terraform] ]]; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C terraform terraform
 fi
 
 eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"

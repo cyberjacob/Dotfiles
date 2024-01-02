@@ -50,17 +50,19 @@ ENABLE_CORRECTION="true"
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 COMPLETION_WAITING_DOTS="true"
 
+neofetch --config ~/.neofetch.conf
+
+zbell_ignore=($EDITOR $PAGER dotnet nano)
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux battery colored-man-pages command-not-found docker git git-prompt pep8 pip pyenv python safe-paste sudo systemd zsh_reload zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(adb archlinux battery bgnotify colored-man-pages command-not-found debian docker docker-compose dotnet extract git-auto-fetch gitfast github git-lfs git-prompt helm kubectl pip pyenv python safe-paste screen sudo terraform tmux vscode zbell branch history-substring-search zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 #eval "$(starship init zsh)"
-
-neofetch --config ~/.neofetch.conf

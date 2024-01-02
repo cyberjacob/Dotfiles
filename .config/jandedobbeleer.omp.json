@@ -30,9 +30,9 @@
           "powerline_symbol": "\ue0b0",
           "properties": {
             "folder_separator_icon": " \ue0b1 ",
-            "home_icon": "\ufd24",
+            "home_icon": "\udb82\udc26",
             "style": "mixed",
-            "template": " \uf74a {{ .Path }} ",
+            "template": " \uf07b {{ .Path }} ",
             "mapped_locations": {
               "/mnt/c/Users/SamMansfield": "\uf17a\ufd24",
               "/mnt/c/Users/SamMansfield/RiderProjects": "\ue601",
@@ -70,7 +70,7 @@
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }} "
           },
           "style": "powerline",
           "trailing_diamond": "\ue0b4",
@@ -82,7 +82,7 @@
           "powerline_symbol": "\ue0b0",
           "properties": {
             "fetch_version": true,
-            "template": " \uf898 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
+            "template": " \udb80\udf99 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} "
           },
           "style": "powerline",
           "type": "node"
@@ -140,7 +140,7 @@
           "properties": {
             "display_mode": "files",
             "fetch_version": false,
-            "template": "{{ if not .IsDefault }} \ufd03 {{.Name}} {{ end }}"
+            "template": "{{ if not .IsDefault }} \udb82\udc05 {{.Name}} {{ end }}"
           },
           "style": "powerline",
           "type": "az"
@@ -178,7 +178,7 @@
           "properties": {
             "style": "round",
             "always_enabled": true,
-            "template": "<transparent>\ue0b0</> \ufbab{{ .FormattedMs }}\u2800"
+            "template": "<transparent>\ue0b0</> \udb81\udd1f{{ .FormattedMs }}\u2800"
           },
           "style": "plain",
           "type": "executiontime"
@@ -254,7 +254,7 @@
           ],
           "powerline_symbol": "\uE0B2",
           "properties": {
-            "template": "{{ if .Error }}{{ .Error }}{{ else }}\uFAA8 {{ .SSID }} {{ .Signal }}% {{ .ReceiveRate }}Mbps{{ end }}"
+            "template": "{{ if .Error }}{{ .Error }}{{ else }}\udb81\udda9 {{ .SSID }} {{ .Signal }}% {{ .ReceiveRate }}Mbps{{ end }}"
           }
         },
         {
@@ -275,7 +275,7 @@
   ],
   "console_title": true,
   "console_title_style": "template",
-  "console_title_template": "{{ if .SSHSession }}\uf817 {{ .UserName }}@{{ .HostName }}: {{ .Folder }}{{ elseif .Root }}{{ .Folder }}{{ else }}{{ .UserName }}: {{ .Folder }}{{ end }}",
+  "console_title_template": "{{ if .SSHSession }}\udb80\udf18 {{ .UserName }}@{{ .HostName }}: {{ .Folder }}{{ elseif .Root }}{{ .Folder }}{{ else }}{{ .UserName }}: {{ .Folder }}{{ end }}",
   "final_space": true,
   "version": 1,
   "osc99": true

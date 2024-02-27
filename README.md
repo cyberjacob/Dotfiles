@@ -45,7 +45,7 @@ winget install \
   dbeaver.dbeaver Debian.Debian Docker.DockerDesktop \
   errata-ai.Vale ExclaimerLtd.CloudSignatureUpdateAgent \
   Figma.Figma \
-  GIMP.GIMP Git.Git \
+  GIMP.GIMP Git.Git GitHub.GitLFS \
   Hashicorp.Terraform \
   Inkscape.Inkscape \
   JAMSoftware.TreeSize JanDeDobbeleer.OhMyPosh jetbrains.dotTrace JetBrains.ReSharper JetBrains.Toolbox \
@@ -56,6 +56,7 @@ winget install \
   Microsoft.DotNet.Runtime.7 Microsoft.DotNet.Runtime.8 \
   Microsoft.DotNet.SDK.7 Microsoft.DotNet.SDK.8 \
   Microsoft.Edge \
+  Microsoft.GitCredentialManagerCore \
   Microsoft.Office Microsoft.OneDrive Microsoft.OpenJDK.11 Microsoft.OpenSSH.Beta \
   Microsoft.PowerAppsCLI Microsoft.PowerAutomateDesktop Microsoft.PowerBI Microsoft.PowerShell \
   Microsoft.Teams \

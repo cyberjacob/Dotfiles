@@ -2,19 +2,22 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = Foxocube
-	email = me@foxocube.xyz
+	name = Sam M
+	email = sam.m@saluscyber.com
 [pull]
 	rebase = false
 [core]
 	editor = ~/.config/git-editor
-	autocrlf = false
+	autocrlf = input
 [pager]
 	branch = false
 [include]
     path = ~/.gitconfig.local
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [init]
 	defaultBranch = main
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe

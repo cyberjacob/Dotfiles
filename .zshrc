@@ -33,6 +33,11 @@ if [[ $+commands[terraform] ]]; then
     complete -o nospace -C terraform terraform
 fi
 
+# Add dotnet tools to path
+if [[ -d "$HOME/.dotnet/tools" ]]; then
+    export PATH="$PATH:$HOME/.dotnet/tools"
+fi
+
 eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"
 
 # Path to your oh-my-zsh installation.

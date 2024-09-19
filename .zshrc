@@ -58,6 +58,11 @@ if command -v -- terraform > /dev/null 2>&1; then
     complete -o nospace -C terraform terraform
 fi
 
+# Add dotnet tools to path
+if [[ -d "$HOME/.dotnet/tools" ]]; then
+    export PATH="$PATH:$HOME/.dotnet/tools"
+fi
+
 # If pipx is installed, register it
 if command -v -- pipx > /dev/null 2>&1; then
     eval "$(register-python-argcomplete pipx)"

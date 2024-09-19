@@ -1,6 +1,13 @@
+# Save history somewhere sensible, max 1000 commands
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Don't share history between active sessions
+setopt nosharehistory
+
+# But do save immidiately
+setopt incappendhistory
 
 # Selects keymap ‘emacs’ for any operations by the current command, and also links ‘emacs’ to ‘main’ so that it is selected by default the next time the editor starts.
 bindkey -e

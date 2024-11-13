@@ -5,6 +5,8 @@ SAVEHIST=1000
 
 # Don't share history between active sessions
 setopt nosharehistory
+setopt no_share_history
+unsetopt share_history
 
 # But do save immidiately
 setopt incappendhistory

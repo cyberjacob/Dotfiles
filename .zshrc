@@ -106,13 +106,15 @@ zbell_ignore=($EDITOR $PAGER dotnet nano)
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    1password
     colored-man-pages
     command-not-found
     docker
     docker-compose
     dotnet
     eza
-    gitfast
+    git
+    # gitfast
     helm
     kitty
     lol

@@ -4,9 +4,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 # Don't share history between active sessions
-setopt nosharehistory
+#setopt nosharehistory
 setopt no_share_history
-unsetopt share_history
+unsetopt sharehistory
 
 # But do save immidiately
 setopt incappendhistory

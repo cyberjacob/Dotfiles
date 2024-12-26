@@ -1,0 +1,7 @@
+[Service]
+Type=simple
+ExecStart=kwalletd6
+
+[Install]
+WantedBy=default.target
+

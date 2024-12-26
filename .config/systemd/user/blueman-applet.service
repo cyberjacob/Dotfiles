@@ -1,0 +1,7 @@
+[Service]
+Type=simple
+ExecStart=blueman-applet
+
+[Install]
+WantedBy=default.target
+

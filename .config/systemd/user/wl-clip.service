@@ -1,0 +1,7 @@
+[Service]
+Type=simple
+ExecStart=wl-clip-persist --clipboard both
+
+[Install]
+WantedBy=default.target
+

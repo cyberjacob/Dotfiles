@@ -1,0 +1,7 @@
+[Service]
+Type=simple
+ExecStart=hyprpaper
+
+[Install]
+WantedBy=default.target
+

@@ -1,14 +1,4 @@
-# Save history somewhere sensible, max 1000 commands
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-# Don't share history between active sessions
-#setopt nosharehistory
-setopt no_share_history
-unsetopt sharehistory
-
-# But do save immidiately
+# Save history immidiately
 setopt incappendhistory
 
 # Selects keymap ‘emacs’ for any operations by the current command, and also links ‘emacs’ to ‘main’ so that it is selected by default the next time the editor starts.
@@ -80,6 +70,11 @@ if [ -f "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 # Set prompt
 eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"
 
@@ -130,6 +125,9 @@ plugins=(
 
 # Enable oh-my-ZSH
 source $ZSH/oh-my-zsh.sh
+
+# no, I still don't want this. And OMZ has no way to disable it turning this on.
+unsetopt sharehistory
 
 # neofetch --config ~/.neofetch.conf
 

@@ -1,3 +1,7 @@
+[Unit]
+After=wayland-session@hyprland.desktop.target
+Requires=wayland-session@hyprland.desktop.target
+
 [Service]
 Type=simple
 ExecStart=nm-applet

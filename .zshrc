@@ -29,7 +29,7 @@ compinit
 bashcompinit
 
 # Helper for dotfile management
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir ~/.cfg/ --work-tree ~'
 
 # If SSH Agent isn't running, start one
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

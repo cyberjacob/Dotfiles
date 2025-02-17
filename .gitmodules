@@ -14,5 +14,5 @@
 	path = .config/fastfetch
 	url = https://github.com/fastfetch-cli/fastfetch.git
 [submodule "/home/sam/.config/windows-terminal-zsh-integration"]
-	path = /home/sam/.config/windows-terminal-zsh-integration
+	path = .config/windows-terminal-zsh-integration
 	url = https://github.com/romkatv/windows-terminal-zsh-integration.git

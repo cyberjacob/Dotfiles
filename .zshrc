@@ -46,9 +46,9 @@ if command -v -- kubectl > /dev/null 2>&1; then
 fi
 
 # If Terraform is installed, setup completion
-if command -v -- terraform > /dev/null 2>&1; then
-    complete -o nospace -C terraform terraform
-fi
+#if command -v -- terraform > /dev/null 2>&1; then
+#    complete -o nospace -C terraform terraform
+#fi
 
 # Add dotnet tools to path
 if [[ -d "$HOME/.dotnet/tools" ]]; then
@@ -71,9 +71,11 @@ if [ -f "$HOME/.local/bin" ]; then
 fi
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if command -v pyenv > /dev/null 2>&1; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
+fi
 
 # Windows Terminal
 source ~/.config/windows-terminal-zsh-integration/windows-terminal-zsh-integration.plugin.zsh
@@ -111,8 +113,8 @@ plugins=(
     docker-compose
     dotnet
     eza
-    git
-    # gitfast
+    #git
+    gitfast
     helm
     kitty
     lol
@@ -124,6 +126,10 @@ plugins=(
     history-substring-search
     zsh-autosuggestions
     zsh-syntax-highlighting
+    tailscale
+    z
+    web-search
+    terraform
 )
 
 # Enable oh-my-ZSH

@@ -75,6 +75,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
+# Windows Terminal
+source ~/.config/windows-terminal-zsh-integration/windows-terminal-zsh-integration.plugin.zsh
+
 # Set prompt
 eval "$(~/.config/oh-my-posh --init --shell zsh --config ~/.config/jandedobbeleer.omp.json)"
 
